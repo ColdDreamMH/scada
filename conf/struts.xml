@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    
+    <!-- 配置文件改了以后不用重新启动 -->
+    <constant name="struts.devMode" value="true" />
+	<!-- 把struts的请求委托给spring管理,
+        作用:创建Action实例的过程由spring处理,其他的还是有struts2自己处理 -->
+   <constant name="struts.objectFactory" value="spring" />
+	
+
+    <package name="default" namespace="/" extends="struts-default">
+		<action name="machineRoomAction_*" method="{1}" class="machineRoomAction">
+			<result name="show">/WEB-INF/page/template/machine.jsp</result>
+		</action>
+		
+		<!-- ***************邮件管理************* -->
+		<!-- 邮箱认证 -->
+		<action name="mailLogin" class="com.scada.action.MaiLoginlAction">
+			<result>/WEB-INF/page/mail/mailHome.jsp</result>
+			<result name="login">/WEB-INF/page/mail/mailLogin.jsp</result>
+		</action>
+		<!-- 邮件列表 -->
+		<action name="mailLoginShow" class="com.scada.action.MaiLoginlAction" method="show">
+			<result name="show">/WEB-INF/page/mail/mailLogin.jsp</result>
+		</action>
+		<!-- 邮件详细信息 -->
+		<action name="mailMessgaeShow" class="com.scada.action.MailOperationAction">
+			<result>/WEB-INF/page/mail/showMail.jsp</result>
+		</action>
+		<!-- 垃圾邮件过滤 -->
+		<action name="spamIdentifyAction_*" class="com.scada.action.SpamIdentifyAction" method="{1}">
+			<result name="home">/WEB-INF/page/mail/spamIdentify.jsp</result>
+			<result name="save">/WEB-INF/page/mail/spamIdentify.jsp</result>
+		</action>
+		<!-- ********************************** -->
+    </package>
+
+
+</struts>

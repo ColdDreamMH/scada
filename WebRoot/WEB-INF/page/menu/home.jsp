@@ -73,6 +73,7 @@
                             <li><b class="tip"></b><a target="Conframe" href=".....">垃圾邮件智能识别</a></li>
                             <li><b class="tip"></b><a target="Conframe" href=".....">内容过滤/规则匹配</a></li>
                             <li><b class="tip"></b><a target="Conframe" href=".....">智能抗攻击</a></li>
+                            <li><b class="tip"></b><a target="Conframe" href=".....">邮件应用</a></li>
                         </ul>
                     </li>
                     <!-- <li><a href="#" class="nav-main-title">邮件系统管理<i class="tip-up"></i></a>
@@ -171,9 +172,10 @@
                 <div>
                     <a class="one">邮件系统管理</a>
                     <ul class="kid">
-                        <li><b class="tip"></b><a target="Conframe" href=".....">垃圾邮件智能识别</a></li>
+                        <li><b class="tip"></b><a target="Conframe" href="spamIdentifyAction_home.action">垃圾邮件智能识别</a></li>
                         <li><b class="tip"></b><a target="Conframe" href=".....">内容过滤/规则匹配</a></li>
                         <li><b class="tip"></b><a target="Conframe" href=".....">智能抗攻击</a></li>
+                        <li><b class="tip"></b><a target="Conframe" href="mailLoginShow.action">邮件应用</a></li>
                     </ul>
                 </div>
                 <div>
@@ -219,7 +221,7 @@
                         <li><b class="tip"></b><a target="Conframe" href=".....">可用性管理</a></li>
                         <li><b class="tip"></b><a target="Conframe" href=".....">性能管理</a></li>
                         <li><b class="tip"></b><a target="Conframe" href=".....">资源拓扑管理</a></li>
-                        <li><b class="tip"></b><a target="Conframe" href="Template/machine.jsp">资产管理</a></li>
+                        <li><b class="tip"></b><a target="Conframe" href="machineRoomAction_show.action">资产管理</a></li>
                         <li><b class="tip"></b><a target="Conframe" href=".....">操作管理</a></li>
                         <li><b class="tip"></b><a target="Conframe" href=".....">安全与合规管理</a></li>
                     </ul>
