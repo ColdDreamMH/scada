@@ -1,4 +1,5 @@
 ﻿<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
@@ -11,22 +12,30 @@
     <title></title>
     <link href="Styles/bootstrap-new.min.css" rel="stylesheet">
     <link href="Styles/login.css" rel="stylesheet">
+    <style type="text/css">
+    .errorMessage{
+    	list-style: none;
+    	color: red;
+    	font-size: 20px;
+    }
+    </style>
   </head>
 
   <body>
     <div class="container">
-      <form class="form-signin">
+      <form class="form-signin" action="loginAction" method="post">
         <h2 class="form-signin-heading">电力云安全监控平台</h2><br>
         <label for="inputEmail" class="sr-only">用户名</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="用户名" required autofocus><br>
+        <input name="username" type="text" id="inputEmail" class="form-control" placeholder="用户名" required autofocus><br>
         <label for="inputPassword" class="sr-only">密码</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="密码" required>
+        <input name="password" type="password" id="inputPassword" class="form-control" placeholder="密码" required>
+        <s:fielderror name="error" />
         <div class="checkbox">
           <label>
             <input type="checkbox" value="remember-me"> 记住密码
           </label>
         </div>
-        <a href="/WEB-INF/page/menu/home.jsp" class="btn btn-lg btn-primary btn-block">登录</a>
+        <input type="submit" value="登录"  class="btn btn-lg btn-primary btn-block" />
       </form>
     </div>
   </body>

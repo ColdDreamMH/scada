@@ -51,8 +51,8 @@
 	</aop:config>
 	
 	
-	<!-- 资产管理 -->
-	 <!-- 机房列表的基本配置 -->
+	 <!-- ==================资产管理================== -->
+	 <!-- **机房列表的基本配置** -->
 	 <bean id="machineRoomDao" class="com.scada.dao.impl.MachineRoomDaoImpl">
 	 	<property name="sessionFactory" ref="sessionFactory"/>
 	 </bean>
@@ -64,7 +64,7 @@
 	 </bean>
 	 
 	 
-	 <!-- 邮件系统管理 -->
+	 <!-- ==================邮件系统管理================== -->
 	 <bean id="spamIdentifyDao" class="com.scada.dao.impl.SpamIdentifyDaoImpl">
 	 	<property name="sessionFactory" ref="sessionFactory"/>
 	 </bean>
@@ -75,4 +75,27 @@
 	 	<property name="spamIdentifyService" ref="spamIdentifyService"></property>
 	 </bean>
 	 
+	 <!-- ==================网站系统管理================== -->
+	 <!-- **系统用户** -->
+	 <bean id="userDao" class="com.scada.dao.impl.UserDaoImpl">
+	 	<property name="sessionFactory" ref="sessionFactory"/>
+	 </bean>
+	 <bean id="userService" class="com.scada.service.impl.UserServiceImpl">
+	 	<property name="userDao" ref="userDao"/>
+	 </bean>
+	 <bean id="userAction" class="com.scada.action.UserAction">
+	 	<property name="userService" ref="userService"/>
+	 </bean>
+	 <!-- **权限管理** -->
+	 <bean id="userRightDao" class="com.scada.dao.impl.UserRightDaoImpl">
+	 	<property name="sessionFactory" ref="sessionFactory"/>
+	 </bean>
+	 <bean id="userRightService" class="com.scada.service.impl.UserRightServiceImpl">
+	 	<property name="userRightDao" ref="userRightDao"/>
+	 </bean>
+	 <bean id="userRightAction" class="com.scada.action.UserRightAction">
+	 	<property name="userRightService" ref="userRightService"/>
+	 </bean>
+
+
 </beans>

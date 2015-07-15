@@ -17,6 +17,7 @@
         <select name="host">
         	<option>pop3.sina.com</option>
         	<option>pop3.bjut.edu.cn</option>
+        	<option>pop3.163.com</option>
         </select>
         <label for="inputEmail" class="sr-only">邮箱账号</label>
         <input type="email" id="inputEmail" name="username" class="form-control" placeholder="用户名" required autofocus><br>

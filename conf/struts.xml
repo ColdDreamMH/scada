@@ -39,6 +39,21 @@
 			<result name="save">/WEB-INF/page/mail/spamIdentify.jsp</result>
 		</action>
 		<!-- ********************************** -->
+		
+		
+		<!-- ***************网站系统管理************* -->
+		<action name="userRightAction_*" class="com.scada.action.UserRightAction" method="{1}">
+			<result>/WEB-INF/page/system/authority.jsp</result>
+			<result name="input">/WEB-INF/page/system/authority.jsp</result>
+		</action>
+		<!-- ********************************** -->
+		
+		<!-- ***************网站系统管理************* -->
+		<action name="loginAction" class="com.scada.action.LoginAction" method="loginValidate">
+			<result name="error">/WEB-INF/page/menu/login.jsp</result>
+			<result name="home">/WEB-INF/page/menu/home.jsp</result>
+		</action>
+		<!-- ********************************** -->
     </package>
 
 

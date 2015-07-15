@@ -1,5 +1,7 @@
 package com.scada.test;
 
+import java.util.Date;
+
 import org.hibernate.SessionFactory;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -7,8 +9,12 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.scada.domain.MachineRoom;
 import com.scada.domain.SpamIdentify;
+import com.scada.domain.User;
+import com.scada.domain.UserRight;
 import com.scada.service.MachineRoomService;
 import com.scada.service.SpamIdentifyService;
+import com.scada.service.UserRightService;
+import com.scada.service.UserService;
 
 
 public class SessionFactoryTest {
@@ -41,4 +47,44 @@ public class SessionFactoryTest {
 		spamIdentifyService.save(spamIdentify);
 	}
 	
+	@Test
+	public void testUser(){
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		UserService userService = (UserService) context.getBean("userService");
+		User user = new User();
+		user.setUsername("menghan");
+		user.setLoginName("meng");
+		user.setLoginPwd("han");
+		user.setAddress("Æ½¹È");
+		user.setBirthday(new Date());
+		user.setContactTel("15001185667");
+		user.setSex("ÄÐ");
+		user.setIsDuty("·ñ");
+		user.setEmail("menghanmh@qq.com");
+		user.setRemark("ÎÞ");
+		user.setRightsId(5);
+		user.setOnDutyDate(new Date());
+		userService.save(user);
+	}
+	
+	@Test
+	public void testUserRight(){
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		UserRightService userRightService = (UserRightService) context.getBean("userRightService");
+		UserRight userRight = new UserRight();
+		
+		userRight.setRightId(5);
+		userRight.setDataAcquisition(false);
+		userRight.setCoordinatedDispatch(true);
+		userRight.setUnifiedDatabase(false);
+		userRight.setApplicationShow(true);
+		userRight.setServiceOperation(true);
+		userRight.setCustomerService(false);
+		userRight.setComprehensiveOffice(true);
+		userRight.setWanSystem(true);
+		userRight.setWebsiteSystem(false);
+		userRight.setMailSystem(true);
+		
+		userRightService.save(userRight);
+	}
 }

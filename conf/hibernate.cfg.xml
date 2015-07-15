@@ -22,6 +22,7 @@
 		
 		<mapping resource="com/scada/domain/MachineRoom.hbm.xml" />
 		<mapping resource="com/scada/domain/SpamIdentify.hbm.xml" />
-		
+		<mapping resource="com/scada/domain/User.hbm.xml" />
+		<mapping resource="com/scada/domain/UserRight.hbm.xml" />
 	</session-factory>
 </hibernate-configuration>

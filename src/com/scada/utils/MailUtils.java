@@ -119,9 +119,10 @@ public class MailUtils {
     public static String getFrom(MimeMessage msg) throws MessagingException, UnsupportedEncodingException { 
         String from = ""; 
         Address[] froms = msg.getFrom(); 
-        if (froms.length < 1) 
-            throw new MessagingException("没有发件人!"); 
-         
+        if (froms.length < 1){
+        	//return "系统恢复";
+            throw new MessagingException("没有发件人!");
+        }         
         InternetAddress address = (InternetAddress) froms[0]; 
         String person = address.getPersonal(); 
         if (person != null) { 
